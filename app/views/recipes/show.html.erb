@@ -1,0 +1,13 @@
+<h1><%= @recipe.title %></h1>
+<p>完成写真</p>
+<p><%= @recipe.comment %></p>
+<p><%= @recipe.cooking_time %></p>
+<p><%= @recipe.material %></p>
+<p><%= @recipe.process %></p>
+
+<% if current_user == micropost.user %>
+    <%= link_to "編集", recipe, method: :delete, data: { confirm: "削除しますか？" }, class: 'btn btn-danger btn-sm' %>
+<% end %>
+<% if current_user == micropost.user %>
+    <%= link_to "削除", recipe, method: :delete, data: { confirm: "削除しますか？" }, class: 'btn btn-danger btn-sm' %>
+<% end %>

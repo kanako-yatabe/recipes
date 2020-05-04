@@ -15,7 +15,7 @@
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item"><a href="#" class="nav-link">レシピ一覧</a></li>
+      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">レシピ一覧　<span class="badge badge-secondary"><%= @count_recipes %></span></a></li>
       <li class="nav-item"><a href="#" class="nav-link">フォロー</a></li>
       <li class="nav-item"><a href="#" class="nav-link">フォロワー</a></li>
     </ul>

@@ -6,4 +6,8 @@ module SessionsHelper
   def logged_in?
     !!current_user
   end
+  
+  def follow_user
+    @follow_user = @user.all_following
+  end 
 end

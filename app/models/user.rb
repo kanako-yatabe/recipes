@@ -5,4 +5,6 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
     mount_uploader :image, ImageUploader
     has_secure_password
+    
+    has_many :recipes
 end

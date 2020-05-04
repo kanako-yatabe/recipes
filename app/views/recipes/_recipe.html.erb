@@ -1,0 +1,12 @@
+<div class="row">
+ <% recipes.each do |recipe| %>
+  <div class="col-md-4">
+    <div>
+     <%= link_to recipe_path(recipe) do %>
+     <%= image_tag recipe.main_photos[0].image.url,class:"image-s" %>
+     <% end %>
+    </div>
+  </div>
+ <% end %>
+<%= paginate recipes %>
+</div>
