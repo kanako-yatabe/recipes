@@ -12,10 +12,10 @@
 
 <div class="tab-content">
     <div id="all_recipes" class="tab-pane active">
-      <%= render 'recipes/recipe', recipe: @recipe %>
+      <%= render 'recipes/recipe', recipes: @recipes %>
     </div>
     <div id="follow_recipes" class="tab-pane">
-      <p>フォローしている人のレシピを表示する</p>
+      <%= render 'recipes/recipe', recipes: @frecipes %>
     </div>
 </div>
 <% else %>
@@ -28,7 +28,7 @@
 </div>
 <div class="tab-content">
   <div id="all_recipes" class="tab-pane active">
-    <%= render 'recipes/recipe', recipe: @recipe %>
+    <%= render 'recipes/recipe', recipes: @recipes %>
   </div>
 </div>
 <% end %>

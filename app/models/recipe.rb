@@ -5,4 +5,6 @@ class Recipe < ApplicationRecord
     validates :cooking_time, presence: true, length: { maximum: 30 }
     validates :process, presence: true
     mount_uploader :image, ImageUploader
+    
+
 end
