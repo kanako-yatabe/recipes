@@ -8,16 +8,37 @@
         <% if @user.image %>
             <img  class="mr-2 rounded" src='<%= @user.image %>'>
           <% else %>
-            <image  class="mr-2 rounded" src="../../assets/images/default_icon.png">
+            <%= image_tag @user.image_icon.url, class:"user-icon" %>
         <% end %>  
       </div>
     </div>
+    <br>
+    <%= render 'relationships/follow_button', user: @user %>
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item"><a href="<%= user_path(@user) %>" class="nav-link <%= 'active' if current_page?(user_path(@user)) %>">レシピ一覧　<span class="badge badge-secondary"><%= @count_recipes %></span></a></li>
-      <li class="nav-item"><a href="#" class="nav-link">フォロー</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">フォロワー</a></li>
-    </ul>
+      <li class="nav-item">
+        <a href="#myrecipes" class="nav-link active" data-toggle="tab" >投稿レシピ一覧 <span class="badge badge-secondary"><%= @count_recipes %></span></a>
+      </li>
+      <li class="nav-item">
+        <a href="#followings" class="nav-link" data-toggle="tab" >フォロー<span class="badge badge-secondary"><%= @count_followings %></span></a>
+      </li>
+      <li class="nav-item">
+        <a href="#followers" class="nav-link" data-toggle="tab" >フォロワー<span class="badge badge-secondary"><%= @count_followers %></span></a>
+      </li>
+　  </ul>
+　  <div class="tab-content">
+      <div id="myrecipes" class="tab-pane active">
+        <%= render 'recipes/recipe', recipe: @recipe %>
+      </div>
+      <div id="followings" class="tab-pane">
+        <%= render 'users/followings', followings: @followings %>
+      </div>
+      <div id="followers" class="tab-pane">
+        <%= render 'users/followers', followers: @followers %>
+      </div>
+    </div>
   </div>
 </div>
+
+

@@ -7,6 +7,8 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @recipes = @user.recipes.order(id: :desc).page(params[:page])
+    @followings = @user.followings.page(params[:page])
+    @followers = @user.followers.page(params[:page])
     counts(@user)
   end
 
@@ -16,6 +18,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.image = "default.png"
     if @user.save
       flash[:success] = 'ユーザー登録が完了しました！'
       redirect_to root_url

@@ -15,7 +15,7 @@
               <li class="dropdown-divider"></li>
               <li class="dropdown-item">保存したレシピ</li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item">レシピを書く</li>
+              <li class="dropdown-item"><%= link_to 'レシピを書く', new_recipe_path(current_user) %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
             </ul>

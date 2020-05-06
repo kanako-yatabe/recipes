@@ -2,17 +2,11 @@ class RecipesController < ApplicationController
   before_action :require_user_logged_in, only: [:create, :edit, :destroy]
   before_action :correct_user, only: [:edit, :destroy]
   def index
-    if logged_in?
-      @recipes_all = Recipe.all
-      @recipes = @recipes_all.where(user_id: @follow_users).order(id: :desc).page(params[:page])
-    end  
+    @recipes = Recipe.all
   end
 
   def show
     @recipe = Recipe.find(params[:id])
-  end
-
-  def new
   end
 
   def create
@@ -22,9 +16,13 @@ class RecipesController < ApplicationController
       redirect_to root_url
     else
       @recipes = current_user.recipes.order(id: :desc).page(params[:page])
-      flash.now[:danger] = 'メッセージの投稿に失敗しました。'
+      flash.now[:danger] = 'レシピの投稿に失敗しました'
       render 'recipes/index'
     end
+  end
+  
+  def new
+    @recipe = Recipe.new
   end
 
   def edit

@@ -1,14 +1,35 @@
 <% if logged_in? %>
 <div class="col-sm-12">
-    <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item"><a href="#" class="nav-link">みんなのレシピ</a></li>
-      <li class="nav-item"><a href="#" class="nav-link">フォローしている人のレシピ</a></li>
-    </ul>
+　<ul class="nav nav-tabs nav-justified mb-3">
+    <li class="nav-item">
+        <a href="#all_recipes" class="nav-link active" data-toggle="tab" >みんなのレシピ</a>
+    </li>
+    <li class="nav-item">
+        <a href="#follow_recipes" class="nav-link" data-toggle="tab" >フォローしている人のレシピ</a>
+    </li>
+　</ul>
+</div>
+
+<div class="tab-content">
+    <div id="all_recipes" class="tab-pane active">
+      <%= render 'recipes/recipe', recipe: @recipe %>
+    </div>
+    <div id="follow_recipes" class="tab-pane">
+      <p>フォローしている人のレシピを表示する</p>
+    </div>
 </div>
 <% else %>
 <div class="col-sm-12">
   <ul class="nav nav-tabs nav-justified mb-3">
-      <li class="nav-item">みんなのレシピ</li>
+    <li class="nav-item">
+        <a href="#all_recipes" class="nav-link active" data-toggle="tab" >みんなのレシピ</a>
+    </li>
   </ul>
 </div>
+<div class="tab-content">
+  <div id="all_recipes" class="tab-pane active">
+    <%= render 'recipes/recipe', recipe: @recipe %>
+  </div>
+</div>
 <% end %>
+

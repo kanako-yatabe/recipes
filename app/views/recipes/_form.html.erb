@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @recipe, local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+      
+      <div class="form-group">
+        <%= f.label :title, 'レシピ名' %>
+        <%= f.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :comment, 'レシピへのコメント' %>
+        <%= f.text_field :comment, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :image, '完成写真' %>
+        <%= f.file_field :image, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :cooking_time, '調理時間' %>
+        <%= f.text_field :cooking_time, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :material, '材料と分量' %>
+        <%= f.text_field :material, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :process, '作り方' %>
+        <%= f.text_field :process, class: 'form-control' %>
+      </div>
+
+      <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
+    <% end %>
+
+  </div>
+</div>
+  
