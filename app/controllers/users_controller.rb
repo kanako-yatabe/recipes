@@ -18,7 +18,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.image = "default.png"
     if @user.save
       flash[:success] = 'ユーザー登録が完了しました！'
       redirect_to root_url
@@ -42,6 +41,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+  
+  def likes
+    @user = User.find(params[:id])
+    @likes = @user.fav_recipes.page(params[:page])
+    counts(@user)
   end
   
   private

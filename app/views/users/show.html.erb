@@ -5,15 +5,20 @@
         <h3 class="card-title"><%= @user.name %></h3>
       </div>
       <div class="card-body">
-        <% if @user.image %>
-            <img  class="mr-2 rounded" src='<%= @user.image %>'>
-          <% else %>
-            <%= image_tag @user.image_icon.url, class:"user-icon" %>
+        <% if @user.image.file %>
+            <img src="<%= @user.image %>" width="300" hight="300">
+        <% else %>
+            <%= image_tag "default.png", width:250, hight:250 %>
         <% end %>  
       </div>
     </div>
     <br>
     <%= render 'relationships/follow_button', user: @user %>
+    <% if current_user.id == @user.id %>
+      <a href="<%= new_recipe_path(current_user) %>" class="btn btn-primary btn-sm btn-block">レシピを書く</a>
+      <br>
+      <a href="<%= likes_user_path(current_user) %>" class="btn btn-success btn-sm btn-block">お気に入りレシピ</a>
+    <% end %>
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs nav-justified mb-3">

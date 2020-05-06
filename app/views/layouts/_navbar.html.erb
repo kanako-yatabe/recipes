@@ -1,6 +1,6 @@
-<header class="mb-4">
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">おひとりさま食堂</a>
+<header class="mb-4 ">
+  <nav class="navbar navbar-expand-sm header">
+    <a class="title" href="/">おひとりさま食堂</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -13,7 +13,7 @@
             <ul class="dropdown-menu dropdown-menu-right">
               <li class="dropdown-item"><%= link_to 'プロフィール', user_path(current_user) %></li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item">保存したレシピ</li>
+              <li class="dropdown-item"><%= link_to 'お気に入りレシピ', likes_user_path(current_user) %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to 'レシピを書く', new_recipe_path(current_user) %></li>
               <li class="dropdown-divider"></li>
