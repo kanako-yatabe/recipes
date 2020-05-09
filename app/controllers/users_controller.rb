@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:index, :show]
+  before_action :authenticate_user, only: [:update, :edit, :destroy]
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
   end
@@ -56,6 +57,12 @@ class UsersController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list through.
   def user_params
     params.require(:user).permit(:name, :email, :image, :password, :password_confirmation)
+  end
+  
+  def authenticate_user
+    if @current_user == nil
+      redirect_to root_url
+    end
   end
 
 end

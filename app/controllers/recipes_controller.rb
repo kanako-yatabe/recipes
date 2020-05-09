@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
-  before_action :require_user_logged_in, only: [:create, :edit, :destroy]
-  before_action :correct_user, only: [:edit, :destroy]
+  before_action :require_user_logged_in, only: [:update, :create, :edit, :destroy]
+  before_action :correct_user, only: [:update, :edit, :destroy]
   def index
     if logged_in?
       @recipes = Recipe.all.order(id: :desc)
@@ -50,7 +50,7 @@ class RecipesController < ApplicationController
   def destroy
     @recipe.destroy
     flash[:success] = 'レシピを削除しました'
-    redirect_back(fallback_location: root_path)
+    redirect_to root_url
   end
   
   private
