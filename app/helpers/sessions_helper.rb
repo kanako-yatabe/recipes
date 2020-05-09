@@ -10,4 +10,8 @@ module SessionsHelper
   def follow_user
     @follow_user = @user.all_following
   end 
+  
+  def current_user?(user)
+    user == current_user
+  end
 end
