@@ -135,15 +135,19 @@
     color :#FFFFFF;
 }
 
+.guide {
+    margin-top: 10px;
+}
+
+
 .login-btn {
     background-color: #000066;
     color :#FFFFFF;
-    margin-bottom: 10px;
 }
 
 .login-btn:link, .login-btn:visited, .login-btn:active, .login-btn:hover {
+    background-color: #000066;
     color :#FFFFFF;
-    margin-bottom: 10px;
 }
 
 .edit-btn, fa-user-edit {
