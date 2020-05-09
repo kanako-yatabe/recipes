@@ -2,7 +2,11 @@
  <% recipes.each do |recipe| %>
   <div class="col-md-4">
    <div>
-    <img  class="mr-2 rounded" src='<%= recipe.image %>'>
+    <% if recipe.image? %>
+      <img  class="mr-2 rounded" src='<%= recipe.image %>' width="200" hight="200">
+    <% else %>
+      <%= image_tag "default_cooking.png", width:200, hight:200 %>
+    <% end %>
     <br>
     <h4><%= link_to recipe.title, recipe_path(recipe), class: "wf-sawarabigothic recipe-title" %></h4>
     <p class="wf-sawarabigothic recipe-item">by：<%= link_to recipe.user.name, user_path(recipe.user), class: 'wf-sawarabigothic recipe-item' %></p>        
