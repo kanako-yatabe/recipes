@@ -1,12 +1,190 @@
+.wf-sawarabigothic { 
+    font-family: "Sawarabi Gothic"; 
+}
+
+.wf-roundedmplus1c {
+    font-family: "M PLUS Rounded 1c"; 
+}
+
+.text p {
+    color: #FFFFEE;
+    margin: 0;
+    margin-left: 15px;
+}
+
 .header {
     background-color: #000066;
     height: 90px;
 }
 
-.title:link, .title:visited, .title:hover, .title:active {
+.title:link, .title:visited, .title:active {
     color: #FFFFEE;
-    font-family: "Suzumushi";
     font-size: 30px;
     text-decoration: none;
     
 }
+
+.title:hover {
+    color: #FFFFEE;
+    font-size: 30px;
+    text-decoration: none;
+    opacity: 0.8 ;
+}
+
+.header-tab,:link, .header-tab:visited, .header-tab:active {
+    color: #FFFFEE;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.header-tab:hover {
+    color: #FFFFEE;
+    text-decoration: none;
+    margin-right: 5px;
+    opacity: 0.8 ;
+}
+
+.left-tab, .left-tab:link, .left-tab:visited, .left-tab:active, .left-tab:hover {
+    margin-right: 20px;
+}
+
+.recipe-title:link, .recipe-title:visited, .recipe-title:active {
+    color: #330000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.recipe-title:hover {
+    color: #330000;
+    font-weight: bold;
+    text-decoration: none;
+    opacity: 0.6 ;
+}
+
+.nav-item:link, .nav-item:visited, .nav-item:active,.recipe-item {
+    color: #330000;
+}
+
+.recipe-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recipe-title h1 {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+.recipe-comment p {
+    margin-top: 16px;
+}
+
+.ed-btn:link, .ed-btn:visited, .ed-btn:active, .ed-btn:hover {
+    color: black;
+}
+
+.fa-trash-alt, .fa-edit, .fa-heart {
+    font-size: 25px;
+}
+
+.fav {
+    color: #FF3366;
+}
+
+.unf-btn {
+    background-color: #000066;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.unf-btn p {
+    margin: 0;
+}
+
+.unf-btn:link, .unf-btn:visited, .unf-btn:active, .unf-btn:hover {
+    color: #FFFFFF;
+}
+
+.f-btn {
+    background-color: #FFFFFF;
+    border: solid;
+    border-color: #000066;
+    color: #222222;
+    font-size: 20px;
+}
+
+.f-btn p {
+    margin: 0;
+}
+
+.f-btn:link, .f-btn:visited, .f-btn:active, .f-btn:hover {
+    color: #222222;
+}
+
+.register-btn {
+    background-color: #000066;
+    color :#FFFFFF;
+}
+
+.register-btn:link, .register-btn:visited, .register-btn:active, .register-btn:hover {
+    color :#FFFFFF;
+}
+
+.login-btn {
+    background-color: #000066;
+    color :#FFFFFF;
+    margin-bottom: 10px;
+}
+
+.login-btn:link, .login-btn:visited, .login-btn:active, .login-btn:hover {
+    color :#FFFFFF;
+    margin-bottom: 10px;
+}
+
+.edit-btn, fa-user-edit {
+    font-size: 15px;
+    background-color: #000066;
+    color :#FFFFFF;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border-radius: 5px;
+}
+
+.edit-btn:link, .edit-btn:visited, .edit-btn:active, .edit-btn:hover {
+    font-size: 15px;
+    background-color: #000066;
+    color :#FFFFFF;
+}
+
+.fa-user-edit:link, .fa-user-edit:visited, .fa-user-edit:active, .fa-user-edit:hover {
+    font-size: 15px;
+    background-color: #000066;
+    color :#FFFFFF;
+}
+
+.btn-block {
+    margin: 0;
+}
+
+.followers p {
+    margin: 0;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.followings p{
+    margin: 0;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+
+
+
+
+

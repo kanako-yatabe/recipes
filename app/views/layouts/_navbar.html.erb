@@ -1,6 +1,9 @@
 <header class="mb-4 ">
   <nav class="navbar navbar-expand-sm header">
-    <a class="title" href="/">おひとりさま食堂</a>
+    <a class="title wf-roundedmplus1c" href="/">おひとりさま食堂</a>
+    <div class="text wf-roundedmplus1c">
+      <p>一人暮らし専用レシピ投稿サービス</p>
+    </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,20 +12,20 @@
       <ul class="navbar-nav">
         <% if logged_in? %>
           <li class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
+            <a href="#" class="header-tab wf-roundedmplus1c dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
             <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-item"><%= link_to 'プロフィール', user_path(current_user) %></li>
+              <li class="dropdown-item"><%= link_to 'プロフィール', user_path(current_user), class: 'wf-sawarabigothic nav-item' %></li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item"><%= link_to 'お気に入りレシピ', likes_user_path(current_user) %></li>
+              <li class="dropdown-item"><%= link_to 'お気に入りレシピ', likes_user_path(current_user), class: 'wf-sawarabigothic nav-item' %></li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item"><%= link_to 'レシピを書く', new_recipe_path(current_user) %></li>
+              <li class="dropdown-item"><%= link_to 'レシピを書く', new_recipe_path(current_user), class: 'wf-sawarabigothic nav-item' %></li>
               <li class="dropdown-divider"></li>
-              <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
+              <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: 'wf-sawarabigothic nav-item' %></li>
             </ul>
           </li>
         <% else %>
-          <li class="nav-item"><%= link_to '会員登録', signup_path, class: 'nav-link' %></li>
-          <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
+          <li><%= link_to '会員登録', signup_path, class: 'wf-roundedmplus1c header-tab left-tab' %></li>
+          <li><%= link_to 'ログイン', login_path, class: 'wf-roundedmplus1c header-tab' %></li>
         <% end %>
       </ul>
     </div>

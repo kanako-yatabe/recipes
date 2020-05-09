@@ -2,34 +2,34 @@
   <aside class="col-sm-4">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title"><%= @user.name %></h3>
+        <h3 class="card-title wf-sawarabigothic"><%= @user.name %></h3>
       </div>
       <div class="card-body">
-        <% if @user.image.file %>
+        <% if @user.image? %>
             <img src="<%= @user.image %>" width="300" hight="300">
         <% else %>
-            <%= image_tag "default.png", width:250, hight:250 %>
+            <%= image_tag "default.png", width:300, hight:300 %>
         <% end %>  
       </div>
     </div>
     <br>
+    <div>
+      <% if current_user.id == @user.id %>
+        <a href="<%= edit_user_path(@user) %>" class="btn btn-sm btn-block"><p class="edit-btn"><i class="fas fa-user-edit"></i>プロフィールを編集する</p></a>
+      <% end %>
+    </div>
     <%= render 'relationships/follow_button', user: @user %>
-    <% if current_user.id == @user.id %>
-      <a href="<%= new_recipe_path(current_user) %>" class="btn btn-primary btn-sm btn-block">レシピを書く</a>
-      <br>
-      <a href="<%= likes_user_path(current_user) %>" class="btn btn-success btn-sm btn-block">お気に入りレシピ</a>
-    <% end %>
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs nav-justified mb-3">
       <li class="nav-item">
-        <a href="#myrecipes" class="nav-link active" data-toggle="tab" >投稿レシピ一覧 <span class="badge badge-secondary"><%= @count_recipes %></span></a>
+        <a href="#myrecipes" class="nav-link active wf-sawarabigothic" data-toggle="tab" >投稿レシピ一覧 <span class="badge badge-secondary"><%= @count_recipes %></span></a>
       </li>
       <li class="nav-item">
-        <a href="#followings" class="nav-link" data-toggle="tab" >フォロー<span class="badge badge-secondary"><%= @count_followings %></span></a>
+        <a href="#followings" class="nav-link wf-sawarabigothic" data-toggle="tab" >フォロー<span class="badge badge-secondary"><%= @count_followings %></span></a>
       </li>
       <li class="nav-item">
-        <a href="#followers" class="nav-link" data-toggle="tab" >フォロワー<span class="badge badge-secondary"><%= @count_followers %></span></a>
+        <a href="#followers" class="nav-link wf-sawarabigothic" data-toggle="tab" >フォロワー<span class="badge badge-secondary"><%= @count_followers %></span></a>
       </li>
 　  </ul>
 　  <div class="tab-content">

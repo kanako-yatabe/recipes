@@ -1,40 +1,50 @@
-<div>
-    <h1><%= @recipe.title %></h1>
+<div class="recipe-top">
+  <div class="recipe-title wf-sawarabigothic">
+      <h1><%= @recipe.title %></h1>
+  </div>
+  <div class="my-btn">
+    <div class="dl-btn">
+      <% if current_user == @recipe.user %>
+        <%= link_to (@recipe), method: :delete, data: { confirm: "削除しますか？" }, class: 'btn btn-sm' do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end%>
+      <% end%>
+    </div>
+    <div class="ed-btn">
+      <% if current_user == @recipe.user %>
+        <a href="<%= edit_recipe_path(@recipe) %>" class="btn btn-sm ed-btn"><i class="fas fa-edit"></i></a>
+      <% end %>
+    </div>
+    <div>
+      <% if logged_in? %>
+        <%= render 'favorites/favorite_button', recipe: @recipe %>
+      <% end %>
+    </div>
+  </div>
 </div>
 <div class="row">
-<div class="col-sm-4">
-  <div>
-    <% if @recipe.image.file %>
+<div class="col-sm-4 recipe-left wf-sawarabigothic">
+  <div class="recipe_image">
+    <% if @recipe.image? %>
       <img  class="mr-2 rounded" src='<%= @recipe.image %>' width="350" hight="350">
     <% else %>
       <%= image_tag "default_cooking.png", width:350, hight:350 %>
     <% end %>
   </div>
-  <div>
+  <div class="recipe-comment">
     <p><%= @recipe.comment %></p>
   </div>
   <div>
     <p>調理時間：<%= @recipe.cooking_time %></p>
   </div>
-  <div>
-    <% if current_user == @recipe.user %>
-      <%= link_to "　　　削除　　　", @recipe, method: :delete, data: { confirm: "削除しますか？" }, class: 'btn btn-danger btn-sm' %>
-      <br>
-      <br>
-      <a href="<%= edit_recipe_path(@recipe) %>" class="btn btn-primary btn-sm">　　　編集　　　</a>
-    <% end %>
-    <% if logged_in? %>
-      <%= render 'favorites/favorite_button', recipe: @recipe %>
-    <% end %>
-  </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-4 recipe-center wf-sawarabigothic">
   <div>
     <h3>材料</h3><br>
     <p><%= @recipe.material %></p>
   </div>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-4 recipe-right wf-sawarabigothic">
   <div>
     <h3>作り方</h3><br>
     <p><%= @recipe.process %></p>

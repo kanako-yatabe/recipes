@@ -40,7 +40,7 @@ class RecipesController < ApplicationController
 
     if @recipe.update(recipe_params)
       flash[:success] = 'レシピを更新しました'
-      redirect_to @message
+      redirect_to @recipe
     else
       flash.now[:danger] = 'レシピの更新に失敗しました'
       render :edit

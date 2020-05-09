@@ -39,9 +39,6 @@ class UsersController < ApplicationController
     render :edit
    end
   end
-
-  def destroy
-  end
   
   def likes
     @user = User.find(params[:id])

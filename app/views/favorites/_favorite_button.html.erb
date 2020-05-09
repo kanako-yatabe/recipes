@@ -1,11 +1,16 @@
 <% if current_user.favorite?(recipe) %>
     <%= form_with(model: current_user.favorites.find_by(recipe_id: recipe.id), local: true, method: :delete) do |f| %>
       <%= hidden_field_tag :recipe_id, recipe.id %>
-      <%= f.submit '「お気に入り」から削除', class: 'btn btn-danger btn-sm btn-block' %>
+      <%= button_tag type: 'submit', class: 'btn btn-sm btn-block fav' do %>
+        <i class="fas fa-heart"></i>
+      <% end %>
     <% end %>
 <% else %>
     <%= form_with(model: current_user.favorites.build, local: true) do |f| %>
       <%= hidden_field_tag :recipe_id, recipe.id %>
-      <%= f.submit '「お気に入り」に保存', class: 'btn btn-primary btn-sm btn-block' %>
+      <%= button_tag type: 'submit', class: 'btn btn-sm btn-block' do %>
+        <i class="far fa-heart"></i>
+      <% end %>
     <% end %>
 <% end %>
+

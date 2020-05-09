@@ -4,9 +4,9 @@
    <div>
     <img  class="mr-2 rounded" src='<%= recipe.image %>'>
     <br>
-    <h4><%= link_to recipe.title, recipe_path(recipe) %></h4>
-    <p>by：<%= link_to recipe.user.name, user_path(recipe.user) %></p>        
-    <p>調理時間：<%= recipe.cooking_time %></p>
+    <h4><%= link_to recipe.title, recipe_path(recipe), class: "wf-sawarabigothic recipe-title" %></h4>
+    <p class="wf-sawarabigothic recipe-item">by：<%= link_to recipe.user.name, user_path(recipe.user), class: 'wf-sawarabigothic recipe-item' %></p>        
+    <p class="wf-sawarabigothic recipe-item">調理時間：<%= recipe.cooking_time %></p>
    </div>
   </div>
  <% end %>
