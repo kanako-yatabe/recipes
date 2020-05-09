@@ -10,7 +10,7 @@
 
       <div class="form-group">
         <%= f.label :comment, 'レシピへのコメント' %>
-        <%= f.text_field :comment, class: 'form-control' %>
+        <%= f.text_area :comment, class: 'form-control' %>
       </div>
       
       <div class="form-group">
@@ -25,17 +25,16 @@
       
       <div class="form-group">
         <%= f.label :material, '材料と分量' %>
-        <%= f.text_field :material, class: 'form-control' %>
+        <%= f.text_area :material, class: 'form-control' %>
       </div>
 
       <div class="form-group">
         <%= f.label :process, '作り方' %>
-        <%= f.text_field :process, class: 'form-control' %>
+        <%= f.text_area :process, class: 'form-control' %>
       </div>
 
       <%= f.submit '投稿', class: 'btn btn-primary btn-block' %>
     <% end %>
-
   </div>
 </div>
   

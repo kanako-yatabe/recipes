@@ -2,8 +2,8 @@
   <ul class="list-unstyled">
     <% followings.each do |user| %>
       <li class="media">
-        <% if @user.image? %>
-            <img src="<%= @user.image %>" width="50" hight="50">
+        <% if user.image? %>
+            <img src="<%= user.image %>" width="50" hight="50">
         <% else %>
             <%= image_tag "default.png", width:50, hight:50 %>
         <% end %> 

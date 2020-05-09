@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
       @recipes = Recipe.all
       @frecipes = current_user.feed_recipes.order(id: :desc).page(params[:page])
       flash.now[:danger] = 'レシピの投稿に失敗しました'
-      render 'recipes/index'
+      render :new
     end
   end
   
