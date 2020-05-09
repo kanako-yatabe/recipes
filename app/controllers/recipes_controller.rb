@@ -3,10 +3,10 @@ class RecipesController < ApplicationController
   before_action :correct_user, only: [:edit, :destroy]
   def index
     if logged_in?
-      @recipes = Recipe.all
+      @recipes = Recipe.all.order(id: :desc)
       @frecipes = current_user.feed_recipes.order(id: :desc).page(params[:page])
     else
-      @recipes = Recipe.all
+      @recipes = Recipe.all.order(id: :desc)
     end
   end
 
